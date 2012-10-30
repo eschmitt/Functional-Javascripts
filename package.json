@@ -6,7 +6,7 @@
     "buster": "*"
   }
 , "scripts": {
-    "test": "buster test"
+    "test": "buster test --reporter specification"
   }
 }
 
