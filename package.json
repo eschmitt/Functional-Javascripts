@@ -1,0 +1,12 @@
+{ "name": "functional-javascripts"
+, "version": "0.1.0"
+, "description": "functional javascript library"
+, "author": "Brian Lonsdorf <brian@looprecur.com>"
+, "devDependencies": {
+    "buster": "*"
+  }
+, "scripts": {
+    "test": "buster test"
+  }
+}
+
