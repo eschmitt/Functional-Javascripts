@@ -1,5 +1,5 @@
 require('./match_core');
-require('./more_functional');
+//require('./more_functional');
 /*!
  * jFun - JavaScript Pattern Matching v0.12
  *

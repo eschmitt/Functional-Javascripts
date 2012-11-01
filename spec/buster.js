@@ -3,6 +3,6 @@ var config = exports
 config['server tests'] = {
   environment: 'node'
 , rootPath: '../'
-, src: ['**/*.js']
+, src: ['*.js']
 , tests: ['spec/server/*.js']
 }
