@@ -76,13 +76,15 @@ sequence=function(){var fns=map(Function.toFunction,arguments),arglen=fns.length
 arguments=[fns[i].apply(this,arguments)];return arguments[0];}}
 map=function(fn,sequence){fn=Function.toFunction(fn);var len=sequence.length,result=new Array(len);for(var i=0;i<len;i++)
 result[i]=fn.apply(null,[sequence[i],i]);return result;}.autoCurry();
-reduce=function(fn,init,sequence){fn=Function.toFunction(fn);var len=sequence.length,result=init;for(var i=0;i<len;i++)
-result=fn.apply(null,[result,sequence[i]]);return result;}.autoCurry();
+//reduce=function(fn,init,sequence){fn=Function.toFunction(fn);var len=sequence.length,result=init;for(var i=0;i<len;i++)
+//result=fn.apply(null,[result,sequence[i]]);return result;}.autoCurry();
 select=function(fn,sequence){fn=Function.toFunction(fn);var len=sequence.length,result=[];for(var i=0;i<len;i++){var x=sequence[i];fn.apply(null,[x,i])&&result.push(x);}
 return result;}.autoCurry();
 guard=function(guard,otherwise,fn){fn=Function.toFunction(fn);guard=Function.toFunction(guard||I);otherwise=Function.toFunction(otherwise||I);return function(){return(guard.apply(this,arguments)?fn:otherwise).apply(this,arguments);}}
 flip = function(f){return f.flip(); }
-filter=select;foldl=reduce;foldr=function(fn,init,sequence){fn=Function.toFunction(fn);var len=sequence.length,result=init;for(var i=len;--i>=0;)
+filter=select;
+//foldl=reduce;
+foldr=function(fn,init,sequence){fn=Function.toFunction(fn);var len=sequence.length,result=init;for(var i=len;--i>=0;)
 result=fn.apply(null,[sequence[i],result]);return result;}
 annd=function(){var args=map(Function.toFunction,arguments),arglen=args.length;return function(){var value=true;for(var i=0;i<arglen;i++)
 if(!(value=args[i].apply(this,arguments)))
